@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Review safety surface after a prompt or guard change",
+      "description": "An agent-action hook. Prompts and guards are the product's safety surface; changing them quietly is how a product like this hurts someone. This injects a review checklist whenever those files are touched, instead of relying on the author to remember.",
+      "trigger": "PostFileSave",
+      "matcher": "src/lib/(ai/prompts|ai/mantle|ai/mock|safety/facts|safety/risk)\\.ts$",
+      "action": {
+        "type": "agent",
+        "prompt": "The safety surface just changed. Before continuing, check and report on each point:\n1. Do the prompts still explicitly refuse legal advice, parenting advice, and comment on either parent's character?\n2. Is `store: false` still set on every Bedrock request?\n3. Does every rewrite path still run screenRisk -> model -> mergeRisk -> compareFacts, with the mock provider held to the same standard?\n4. Can a threat or self-harm message still never be softened, while 'send as written' stays enabled?\n5. Does any new code path log, persist or return message text that was not sent?\n6. Do the tests in src/lib/safety cover any new class of fact or risk phrasing introduced here? Add cases if not.\nIf any answer is no, fix it before moving on. Do not relax a test to make the change pass."
+      }
+    }
+  ]
+}

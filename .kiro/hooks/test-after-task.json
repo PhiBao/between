@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Run unit tests after each spec task",
+      "description": "The suite takes under a second, so there is no excuse for finishing a task on a red build. Runs after every spec task completes.",
+      "trigger": "PostTaskExec",
+      "action": {
+        "type": "command",
+        "command": "pnpm test --silent"
+      },
+      "timeout": 180
+    }
+  ]
+}

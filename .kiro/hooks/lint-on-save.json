@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Lint and type-check on save",
+      "description": "Keeps generated code honest: ESLint fixes what it can on the saved file, then the project type-checks. Catches the class of error an agent is most likely to introduce — a plausible-looking call with the wrong types.",
+      "trigger": "PostFileSave",
+      "matcher": "src/.*\\.(ts|tsx)$",
+      "action": {
+        "type": "command",
+        "command": "./scripts/hooks/verify-file.sh"
+      },
+      "timeout": 120
+    }
+  ]
+}

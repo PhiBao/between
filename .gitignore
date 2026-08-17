@@ -1,0 +1,31 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# next
+.next/
+out/
+next-env.d.ts
+
+# env & secrets — never commit
+.env
+.env.local
+.env*.local
+*.local
+.db-password.local
+
+# test output
+coverage/
+playwright-report/
+test-results/
+blob-report/
+
+# os / editor
+.DS_Store
+*.log
+
+# supabase cli local state
+supabase/.temp/
+
+# typescript incremental build info
+*.tsbuildinfo

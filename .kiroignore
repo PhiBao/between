@@ -1,0 +1,14 @@
+# Keep secrets and noise out of the agent's context.
+.env
+.env.local
+.env*.local
+*.local
+.db-password.local
+
+node_modules/
+.next/
+coverage/
+playwright-report/
+test-results/
+blob-report/
+pnpm-lock.yaml
