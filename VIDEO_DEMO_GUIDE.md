@@ -13,12 +13,19 @@ the rewrite, and Sam confirming the agreement.
 
 ## Before you record
 
+Record against the live deployment — **https://between-opal.vercel.app** — which
+runs the real model, or run it locally if you prefer full control of the data:
+
 ```bash
 cd ~/kiro
 pnpm seed                      # fresh demo record: 7 messages, 4 agreements
 AI_PROVIDER=mantle pnpm build  # use the real model, not offline mode
 AI_PROVIDER=mantle pnpm start
 ```
+
+If you record against the live site and the record has drifted from anything
+extra you sent while testing, run `pnpm seed` first — it rebuilds the demo record
+in the same database the live site uses.
 
 Then, in the browser:
 

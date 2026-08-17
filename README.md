@@ -81,8 +81,10 @@ Three product rules make it trustworthy rather than clever:
 
 ## Try it
 
-**Live demo:** _see the submission form for the deployed URL_
-(or run it locally in about two minutes — see [Run it locally](#run-it-locally)).
+**Live demo: https://between-opal.vercel.app**
+
+Sign in with the credentials below — no setup required. It also runs locally in
+about two minutes with no AI key at all (see [Run it locally](#run-it-locally)).
 
 ### Test credentials
 

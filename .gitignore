@@ -29,3 +29,8 @@ supabase/.temp/
 
 # typescript incremental build info
 *.tsbuildinfo
+
+# vercel cli local state
+.vercel/
+.vercel
+.env*
