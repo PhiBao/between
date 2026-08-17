@@ -124,6 +124,9 @@ window). The interesting behaviour is between two people.
    `/verify` in a signed-out window, and paste it. That page needs no account —
    it is for the mediator holding a printout.
 
+The same seven beats, with timings and the exact wording used in the submission
+video, are in [`VIDEO_DEMO_GUIDE.md`](VIDEO_DEMO_GUIDE.md).
+
 ---
 
 ## What to look at first
