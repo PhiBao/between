@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { z } from "zod";
+import { nextPathSchema } from "@/lib/redirects";
 import { supabaseServer } from "@/lib/supabase/server";
 
 /**
@@ -16,7 +17,7 @@ import { supabaseServer } from "@/lib/supabase/server";
 const credentialsSchema = z.object({
   email: z.string().trim().email("Enter a valid email address."),
   password: z.string().min(8, "Passwords are at least 8 characters."),
-  next: z.string().startsWith("/").max(200).optional(),
+  next: nextPathSchema.optional(),
 });
 
 function backTo(mode: "sign-in" | "sign-up", message: string, next?: string): never {
